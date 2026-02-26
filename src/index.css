@@ -110,3 +110,30 @@ body {
 .warning {
   color: var(--secondary-color);
 }
+/* ---------- STATISTICS ---------- */
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid white;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.statistics .stat-item {
+  text-align: center;
+}
+
+.statistics .stat-label {
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
+.statistics .stat-value {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.statistics .stat-value.warning {
+  color: #f89738;  
+}

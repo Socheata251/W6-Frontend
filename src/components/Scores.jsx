@@ -23,6 +23,7 @@ function Scores({ courseName, courseResults }) {
           ))}
         </tbody>
       </table>
+      <Statistics courseResults={courseResults} />
     </div>
   );
 }
@@ -33,5 +34,28 @@ function getScoreClassName(score) {
   } else {
     return "";         
   }
+}
+//step4
+function Statistics({ courseResults }) {
+  const scores = courseResults.map((result) => result.score);
+  const avg = Math.round(scores.reduce((sum, s) => sum + s, 0) / scores.length);
+  const min = Math.min(...scores);
+  const max = Math.max(...scores);
+  return (
+    <div className="statistics">
+      <div className="stat-item">
+        <div className="stat-label">AVERAGE</div>
+        <div className="stat-value">{avg}</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-label">MIN</div>
+        <div className={`stat-value ${min < 50 ? "warning" : ""}`}>{min}</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-label">MAX</div>
+        <div className="stat-value">{max}</div>
+      </div>
+    </div>
+  );
 }
 export default Scores;
