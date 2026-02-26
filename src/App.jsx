@@ -7,7 +7,6 @@ function App() {
   return (
     <>
       <Header batchName="Fake Batch" />
-
       <main className="scores-container">
       <Scores courseName="Java"    courseResults={JAVA_RESULTS}    />
         <Scores courseName="Python"  courseResults={PYTHON_RESULTS}  />

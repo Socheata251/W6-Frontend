@@ -2,7 +2,7 @@
 function Scores({ courseName, courseResults }) {
   return (
     <div className="scores">
-      <h1>{courseName}</h1>       {/* ← receives "HTML", "Java", etc. */}
+      <h1>{courseName}</h1>      
       <table>
         <thead>
           <tr>
@@ -12,11 +12,13 @@ function Scores({ courseName, courseResults }) {
           </tr>
         </thead>
         <tbody>
-          {courseResults.map((result, index) => (   // ← loops the array
+          {courseResults.map((result, index) => (   
             <tr key={index}>
               <td>{result.firstName}</td>
               <td>{result.lastName}</td>
-              <td>{result.score}</td>
+              <td className={getScoreClassName(result.score)}>
+                {result.score}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -26,6 +28,10 @@ function Scores({ courseName, courseResults }) {
 }
 //step3 
 function getScoreClassName(score) {
-  return score < 50 ? "warning" : "";
+  if (score < 50) {
+    return "warning";  
+  } else {
+    return "";         
+  }
 }
 export default Scores;
