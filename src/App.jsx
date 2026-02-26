@@ -8,9 +8,6 @@ function App() {
     <>
       <Header batchName="Fake Batch" />
       <main className="scores-container">
-      <Scores courseName="Java"    courseResults={JAVA_RESULTS}    />
-        <Scores courseName="Python"  courseResults={PYTHON_RESULTS}  />
-        <Scores courseName="HTML"    courseResults={HTML_RESULTS}    />
         <Scores courseName="English" courseResults={ENGLISH_RESULTS} />
       </main>
     </>
