@@ -1,3 +1,4 @@
+// step2
 function Scores({ courseName, courseResults }) {
   return (
     <div className="scores">
@@ -23,5 +24,8 @@ function Scores({ courseName, courseResults }) {
     </div>
   );
 }
-
+//step3 
+function getScoreClassName(score) {
+  return score < 50 ? "warning" : "";
+}
 export default Scores;
